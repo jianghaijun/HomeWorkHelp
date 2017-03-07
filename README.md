@@ -8,4 +8,4 @@ HomeWorkHelp作业帮是面向全国中小学生的移动学习平台，也是�
   2.[Logger打印日志](https://github.com/jianghaijun/logger)<br/>
   3.[xUtils3](https://github.com/jianghaijun/xUtils3)<br/>
 ##使用工具<br/>
-  1.SharedPreferencesUtil
+  1.SharedPreferences
