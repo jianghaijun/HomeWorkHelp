@@ -8,5 +8,7 @@ HomeWorkHelp作业帮是面向全国中小学生的移动学习平台，也是�
   2.[Logger打印日志](https://github.com/jianghaijun/logger)<br/>
   3.[xUtils3](https://github.com/jianghaijun/xUtils3)<br/>
   4.[百分比布局](https://github.com/jianghaijun/android-percent-support-extend)<br/>
+  5.[圆形图片](https://github.com/jianghaijun/circleimageview)<br/>
+  6.[图片加载库Glide](https://github.com/jianghaijun/glide)<br/>
 ##使用工具<br/>
   1.SharedPreferences
