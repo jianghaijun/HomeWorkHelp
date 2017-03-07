@@ -1,69 +1,56 @@
 package com.example.homeworkhelp.activity;
 
-import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.homeworkhelp.R;
-import com.example.homeworkhelp.base.BaseActivity;
-import com.example.homeworkhelp.listener.PermissinoListener;
-import com.example.homeworkhelp.presenter.BootPagePresenter;
-import com.example.homeworkhelp.view.BootPageView;
+import com.example.homeworkhelp.custom.Guideview;
+import com.example.homeworkhelp.utils.SharedPreferencesUtil;
 
-import java.util.List;
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 /**
- * Created by Administrator on 2017/3/6
+ * 引导页
+ * @author JiangHaiJun
+ * @time 2017/3/6 21:08
  */
-public class BootPageActivity extends BaseActivity<BootPageView, BootPagePresenter> implements BootPageView {
-	private TextView txt;
-	
+public class BootPageActivity extends AppCompatActivity {
+	@ViewInject(R.id.guideView)
+	private Guideview guideView;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_boot_page);
-		
-		txt = (TextView) findViewById(R.id.txt);
-		
-		txt.setOnClickListener(new View.OnClickListener() {
+		x.view().inject(this);
+		initView();
+	}
+
+	/**
+	 * 初始化
+	 */
+	private void initView() {
+		guideView.setData(R.drawable.guide1_iv1, R.drawable.guide1_iv2, R.drawable.guide1_iv3);
+		guideView.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void onClick(View view) {
-				requestAuthority(new String[]{Manifest.permission.WRITE_CONTACTS, Manifest.permission.CALL_PHONE, Manifest.permission.READ_CALENDAR
-				}, new PermissinoListener() {
-					@Override
-					public void agree() {
-						presenter.show();
-					}
-					
-					@Override
-					public void refuse(List<String> refusePermission) {
-						
-					}
-				});
+			public void onClick(View v) {
+				Intent intent = new Intent(BootPageActivity.this, WelcomeActivity.class);
+				startActivity(intent);
+				// 更改SharedPreferences
+				SharedPreferencesUtil.storedMessage(BootPageActivity.this, SharedPreferencesUtil.FIRST_OPEN, false);
+				finish();
 			}
 		});
 	}
 	
 	@Override
-	public BootPagePresenter initPresenter() {
-		return new BootPagePresenter();
-	}
-	
-	
-	@Override
-	public void showLoading() {
-		
-	}
-	
-	@Override
-	public void hideLoading() {
-		
-	}
-	
-	@Override
-	public void showToast() {
-		Toast.makeText(this, "MVP", Toast.LENGTH_SHORT).show();
+	protected void onPause() {
+		super.onPause();
+		// 如果切换到后台，就设置下次不进入功能引导页
+		SharedPreferencesUtil.storedMessage(BootPageActivity.this, SharedPreferencesUtil.FIRST_OPEN, false);
+		finish();
 	}
 }

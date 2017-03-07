@@ -1,14 +1,13 @@
 package com.example.homeworkhelp.application;
 
-import android.nfc.Tag;
-
-import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 
 import org.litepal.LitePalApplication;
+import org.xutils.x;
 
 /**
- * Created by Administrator on 2017/3/6 0006.
+ * @author JiangHaiJun
+ * @time 2017/3/6 21:10
  */
 
 public class MyApplication extends LitePalApplication {
@@ -21,5 +20,7 @@ public class MyApplication extends LitePalApplication {
          * 设置不打印Log---logLevel(LogLevel.NONE);
          */
         Logger.init(TAG);
+        // 初始化XUtils
+        x.Ext.init(this);
     }
 }

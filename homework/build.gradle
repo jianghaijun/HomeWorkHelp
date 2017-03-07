@@ -24,11 +24,14 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
-    testCompile 'junit:junit:4.12'
     // 引用LitePal数据库
     compile 'org.litepal.android:core:1.5.0'
     // Log工具
     compile 'com.orhanobut:logger:1.15'
+    // XUtils3
+    compile 'org.xutils:xutils:3.3.42'
+    testCompile 'junit:junit:4.12'
 }
