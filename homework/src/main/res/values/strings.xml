@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">HomeWorkHelp</string>
     <string name="skip">跳过</string>
+    <string name="userPhone">手机号</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="region">注册</string>
+    <string name="forgetPassword">忘记密码?</string>
+
 </resources>

@@ -1,15 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
     tools:context="com.example.homeworkhelp.activity.LoginActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="登录界面"/>
+    <com.liji.circleimageview.CircleImageView
+        android:id="@+id/userHeadIv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        app:circle_border_color="#ffffff"
+        app:circle_border_width="5dp"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginTopPercent="10%" />
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/userNameEdt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/login_input_bg"
+        android:gravity="left|center"
+        android:hint="@string/userPhone"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginRightPercent="10%" />
+
+    <EditText
+        android:id="@+id/passwordEdt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_input_bg"
+        android:gravity="left|center"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginRightPercent="10%" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginRightPercent="10%">
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bule_btn"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+
+        <Button
+            android:id="@+id/regionBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bule_btn"
+            android:gravity="center"
+            android:text="@string/region"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/forgetPasswordBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:text="@string/forgetPassword"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_marginPercent="10%w" />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

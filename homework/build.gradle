@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "com.example.homeworkhelp"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -33,5 +33,12 @@ dependencies {
     compile 'com.orhanobut:logger:1.15'
     // XUtils3
     compile 'org.xutils:xutils:3.3.42'
+    // 百分比布局
+    compile 'com.zhy:percent-support-extends:1.1.1'
+    // 圆形图片
+    compile 'liji.library.dev:circleimageview:0.1.0'
+    // 图片加载库
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:support-v4:19.1.0'
     testCompile 'junit:junit:4.12'
 }
