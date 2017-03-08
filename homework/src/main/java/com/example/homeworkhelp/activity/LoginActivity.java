@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.example.homeworkhelp.R;
 import com.example.homeworkhelp.base.BaseActivity;
 import com.example.homeworkhelp.presenter.LoginPresenter;
+import com.example.homeworkhelp.utils.SharedPreferencesUtil;
 import com.example.homeworkhelp.view.LoginView;
 import com.liji.circleimageview.CircleImageView;
 
@@ -62,6 +63,8 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 	public void login(boolean isSuccessful) {
 		if (isSuccessful) {
 			Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+            // 登录成功后修改为已登录状态
+            SharedPreferencesUtil.storedMessage(LoginActivity.this, SharedPreferencesUtil.IS_LOGIN, true);
 		} else {
 			Toast.makeText(this, "登录失败", Toast.LENGTH_SHORT).show();
 		}
