@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageButton
+        android:id="@+id/imgBtnLeft"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/title_bg"
+        android:src="@null"
+        app:layout_heightPercent="100%"
+        app:layout_widthPercent="15%"/>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_widthPercent="68%"/>
+
+    <ImageButton
+        android:id="@+id/imgBtnRight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/title_bg"
+        android:contentDescription="@null"
+        android:src="@null"
+        app:layout_heightPercent="100%"
+        app:layout_widthPercent="15%"/>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

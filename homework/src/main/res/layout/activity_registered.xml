@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#007AD5"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.example.homeworkhelp.activity.RegisteredActivity">
+
+    <include
+        android:id="@+id/statusBar"
+        layout="@layout/status_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        app:layout_heightPercent="10%"/>
+
+    <EditText
+        android:id="@+id/registerPhoneEdt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/login_input_bg"
+        android:gravity="left|center"
+        android:hint="@string/userPhone"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginRightPercent="10%"
+        app:layout_marginTopPercent="20%h"/>
+
+    <EditText
+        android:id="@+id/registerPassWordEdt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_input_bg"
+        android:gravity="left|center"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginRightPercent="10%"/>
+
+    <EditText
+        android:id="@+id/confirmPassWordEdt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_input_bg"
+        android:gravity="left|center"
+        android:hint="@string/confirmPassWordEdt"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginRightPercent="10%"/>
+
+    <Button
+        android:id="@+id/regBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/blue_btn"
+        android:text="@string/register"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginRightPercent="10%"/>
+
+</com.zhy.android.percent.support.PercentLinearLayout>
