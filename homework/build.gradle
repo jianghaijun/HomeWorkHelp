@@ -25,19 +25,19 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    // 引用LitePal数据库
+    // Log工具
+    // XUtils3
+    // 百分比布局
+    // 圆形图片
+    // 图片加载库
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
-    // 引用LitePal数据库
     compile 'org.litepal.android:core:1.5.0'
-    // Log工具
     compile 'com.orhanobut:logger:1.15'
-    // XUtils3
     compile 'org.xutils:xutils:3.3.42'
-    // 百分比布局
     compile 'com.zhy:percent-support-extends:1.1.1'
-    // 圆形图片
     compile 'liji.library.dev:circleimageview:0.1.0'
-    // 图片加载库
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:support-v4:19.1.0'
     testCompile 'junit:junit:4.12'
