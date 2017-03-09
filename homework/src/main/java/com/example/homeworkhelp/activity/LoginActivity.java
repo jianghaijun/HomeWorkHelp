@@ -1,5 +1,6 @@
 package com.example.homeworkhelp.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,7 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 	@ViewInject(R.id.passwordEdt)
 	private EditText passwordEdt;
 
+	private Context mContext;
 	private CustomProgressDialog progressDialog;
 
 	@Override
@@ -43,6 +45,8 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		x.view().inject(this);
+		
+		mContext = this;
 		
 		progressDialog = new CustomProgressDialog(LoginActivity.this);
 		Glide.with(this).load("http://s15.sinaimg.cn/mw690/bf131490gd817c13a0dfe&690").into(userHeadIv);
@@ -66,11 +70,11 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 	@Override
 	public void login(boolean isSuccessful) {
 		if (isSuccessful) {
-			Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+			Toast.makeText(mContext, "登录成功", Toast.LENGTH_SHORT).show();
             // 登录成功后修改为已登录状态
             SharedPreferencesUtil.storedMessage(LoginActivity.this, SharedPreferencesUtil.IS_LOGIN, true);
 		} else {
-			Toast.makeText(this, "登录失败", Toast.LENGTH_SHORT).show();
+			Toast.makeText(mContext, "登录失败", Toast.LENGTH_SHORT).show();
 		}
 	}
 	
@@ -86,7 +90,7 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 				break;
 			// 登录
 			case R.id.loginBtn:
-				presenter.login(userNameEdt.getText().toString().trim(), passwordEdt.getText().toString().trim());
+				presenter.login(mContext, userNameEdt.getText().toString().trim(), passwordEdt.getText().toString().trim());
 				break;
 			// 注册
 			case R.id.registeredBtn:
