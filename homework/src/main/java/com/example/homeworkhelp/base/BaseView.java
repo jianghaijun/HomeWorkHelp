@@ -5,9 +5,9 @@ package com.example.homeworkhelp.base;
  */
 
 public interface BaseView {
-    // 显示加载
+    // 显示加载动画
     void showLoading();
 
-    // 隐藏加载
+    // 隐藏加载动画
     void hideLoading();
 }

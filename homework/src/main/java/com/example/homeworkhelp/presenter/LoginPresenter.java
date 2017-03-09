@@ -1,6 +1,9 @@
 package com.example.homeworkhelp.presenter;
 
+import android.content.Context;
+
 import com.example.homeworkhelp.base.BasePresenter;
+import com.example.homeworkhelp.utils.ToastUtil;
 import com.example.homeworkhelp.view.LoginView;
 
 /**
@@ -9,7 +12,19 @@ import com.example.homeworkhelp.view.LoginView;
  */
 
 public class LoginPresenter extends BasePresenter<LoginView> {
-    public void login (String userName, String password) {
-        mView.login(true);
+    /**
+     * 登录
+     * @param mContext
+     * @param userName
+     * @param password
+     */
+    public void login (Context mContext, String userName, String password) {
+        if (userName.isEmpty()) {
+            ToastUtil.showShort(mContext, "手机号不能为空!");
+        } else if (password.isEmpty()) {
+            ToastUtil.showShort(mContext, "密码不能为空!");
+        } else {
+            mView.login(true);
+        }
     }
 }

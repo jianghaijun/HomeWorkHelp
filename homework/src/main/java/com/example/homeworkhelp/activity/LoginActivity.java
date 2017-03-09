@@ -1,19 +1,20 @@
 package com.example.homeworkhelp.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.homeworkhelp.R;
 import com.example.homeworkhelp.base.BaseActivity;
+import com.example.homeworkhelp.dialog.CustomProgressDialog;
 import com.example.homeworkhelp.presenter.LoginPresenter;
 import com.example.homeworkhelp.utils.SharedPreferencesUtil;
 import com.example.homeworkhelp.view.LoginView;
 import com.liji.circleimageview.CircleImageView;
+import com.orhanobut.logger.Logger;
 
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -35,12 +36,15 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 	@ViewInject(R.id.passwordEdt)
 	private EditText passwordEdt;
 
+	private CustomProgressDialog progressDialog;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		x.view().inject(this);
-
+		
+		progressDialog = new CustomProgressDialog(LoginActivity.this);
 		Glide.with(this).load("http://s15.sinaimg.cn/mw690/bf131490gd817c13a0dfe&690").into(userHeadIv);
 	}
 
@@ -51,12 +55,12 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 
 	@Override
 	public void showLoading() {
-
+		progressDialog.show(true);
 	}
 
 	@Override
 	public void hideLoading() {
-
+		progressDialog.dismiss();
 	}
 
 	@Override
@@ -69,12 +73,12 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 			Toast.makeText(this, "登录失败", Toast.LENGTH_SHORT).show();
 		}
 	}
-
+	
 	/**
 	 * 点击事件
 	 * @param view
 	 */
-	@Event({R.id.userHeadIv, R.id.loginBtn, R.id.regionBtn, R.id.forgetPasswordBtn})
+	@Event({R.id.userHeadIv, R.id.loginBtn, R.id.registeredBtn, R.id.forgetPasswordBtn})
 	private void onClick(View view){
 		switch (view.getId()) {
 			// 更改头像
@@ -85,14 +89,29 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 				presenter.login(userNameEdt.getText().toString().trim(), passwordEdt.getText().toString().trim());
 				break;
 			// 注册
-			case R.id.regionBtn:
+			case R.id.registeredBtn:
+				startActivityForResult(new Intent(LoginActivity.this, RegisteredActivity.class), 1);
 				break;
 			// 忘记密码
 			case R.id.forgetPasswordBtn:
 				break;
-
 		}
 	}
 
-
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		switch (resultCode) {
+			case 1:
+				switch (requestCode) {
+					case 1:
+						Logger.w(data.getExtras().getString("userPhone"));
+						break;
+				}
+				break;
+			default:
+				break;
+		}
+	}
 }

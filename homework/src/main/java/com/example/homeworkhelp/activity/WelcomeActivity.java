@@ -60,9 +60,9 @@ public class WelcomeActivity extends AppCompatActivity {
 				if (downTimer != null) {
 					downTimer.cancel();
 				}
-				
+				// 停止progressBar
 				progressBar.stop();
-				
+				// 进入下一个界面
 				nextActivity();
 			}
 		});
