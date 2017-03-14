@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/one_hundred_dp">
+
+    <com.liji.circleimageview.CircleImageView
+        android:id="@+id/userHead"
+        android:layout_width="@dimen/eighty_dp"
+        android:layout_height="@dimen/eighty_dp"
+        android:scaleType="centerCrop"
+        android:layout_margin="@dimen/ten_dp"
+        app:circle_border_color="@color/colorWhite"
+        app:circle_border_width="@dimen/five_dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/userHead">
+
+        <TextView
+            android:id="@+id/userNameTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|bottom"
+            android:text="@string/app_name"
+            android:textSize="@dimen/twenty_sp"/>
+
+        <TextView
+            android:id="@+id/userPhoneTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:text="@string/app_name"
+            android:textSize="@dimen/twenty_sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

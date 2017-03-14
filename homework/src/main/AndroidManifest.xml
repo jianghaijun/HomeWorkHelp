@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.example.homeworkhelp"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.homeworkhelp">
 
     <!-- XUtils 使用权限 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".application.MyApplication"
@@ -18,22 +18,24 @@
         <!-- 欢迎页 -->
         <activity android:name=".activity.WelcomeActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <!-- 引导页 -->
-        <activity android:name=".activity.BootPageActivity"/>
+        <activity android:name=".activity.BootPageActivity" />
         <!-- 登录界面 -->
-        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.LoginActivity" />
         <!-- 主界面 -->
-        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.MainActivity" />
         <!-- 注册界面 -->
-        <activity android:name=".activity.RegisteredActivity"/>
+        <activity android:name=".activity.RegisteredActivity" />
         <!-- 修改密码界面 -->
-        <activity android:name=".activity.ForgetPasswordActivity"/>
+        <activity android:name=".activity.ForgetPasswordActivity" />
+        <!-- 选择用户界面 -->
+        <activity android:name=".activity.ChoiceUserActivity" />
     </application>
 
 </manifest>

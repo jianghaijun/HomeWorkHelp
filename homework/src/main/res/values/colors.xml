@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <!--白色-->
     <color name="colorWhite">#FFFFFF</color>
+    <!--灰色-->
+    <color name="colorGray">#F6F6F6</color>
     <!--自定义按钮背景色-->
     <color name="colorLightBlue">#3399E1</color>
     

@@ -87,8 +87,9 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 	@Event({R.id.userHeadIv, R.id.loginBtn, R.id.registeredBtn, R.id.forgetPasswordBtn})
 	private void onClick(View view){
 		switch (view.getId()) {
-			// 更改头像
+			// 选择用户
 			case R.id.userHeadIv:
+				startActivityForResult(new Intent(LoginActivity.this, ChoiceUserActivity.class), 3);
 				break;
 			// 登录
 			case R.id.loginBtn:
@@ -119,6 +120,9 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 					case 2:
 						Logger.w("修改密码成功!");
 						Logger.w(data.getExtras().getString("userPhone"));
+						break;
+					case 3:
+						Logger.w("用户选择!");
 						break;
 				}
 				break;
