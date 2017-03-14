@@ -11,10 +11,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/fifty_dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="@dimen/thirty_dp"
             android:gravity="center">
 
             <RadioGroup
@@ -29,12 +29,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingBottom="5dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="5dp"
-                android:text="立即体验"
-                android:textColor="#fff"
+                android:paddingBottom="@dimen/five_dp"
+                android:paddingLeft="@dimen/twenty_dp"
+                android:paddingRight="@dimen/twenty_dp"
+                android:paddingTop="@dimen/five_dp"
+                android:text="@string/immediateExperience"
+                android:textColor="@color/colorWhite"
                 android:visibility="gone"/>
         </LinearLayout>
     </RelativeLayout>

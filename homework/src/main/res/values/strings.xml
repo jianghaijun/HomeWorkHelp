@@ -6,6 +6,12 @@
     <string name="login">登录</string>
     <string name="register">注册</string>
     <string name="forgetPassword">忘记密码?</string>
+    <string name="oldPassWord">原密码</string>
+    <string name="newPassWord">新密码</string>
     <string name="confirmPassWordEdt">确认密码</string>
+    <string name="modifyPassWord">修改密码</string>
+    <string name="smsCode">验证码</string>
+    <string name="sendSmsCode">发送验证码</string>
+    <string name="immediateExperience">立即体验</string>
 
 </resources>

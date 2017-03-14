@@ -68,13 +68,15 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 	}
 
 	@Override
-	public void login(boolean isSuccessful) {
+	public void login(boolean isSuccessful, String msg) {
 		if (isSuccessful) {
 			Toast.makeText(mContext, "登录成功", Toast.LENGTH_SHORT).show();
             // 登录成功后修改为已登录状态
             SharedPreferencesUtil.storedMessage(LoginActivity.this, SharedPreferencesUtil.IS_LOGIN, true);
+			startActivity(new Intent(mContext, MainActivity.class));
+			this.finish();
 		} else {
-			Toast.makeText(mContext, "登录失败", Toast.LENGTH_SHORT).show();
+			Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
 		}
 	}
 	
@@ -98,6 +100,7 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 				break;
 			// 忘记密码
 			case R.id.forgetPasswordBtn:
+				startActivityForResult(new Intent(LoginActivity.this, ForgetPasswordActivity.class), 2);
 				break;
 		}
 	}
@@ -110,6 +113,11 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 			case 1:
 				switch (requestCode) {
 					case 1:
+						Logger.w("新用户注册成功!");
+						Logger.w(data.getExtras().getString("userPhone"));
+						break;
+					case 2:
+						Logger.w("修改密码成功!");
 						Logger.w(data.getExtras().getString("userPhone"));
 						break;
 				}

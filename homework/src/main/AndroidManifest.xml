@@ -30,8 +30,10 @@
         <activity android:name=".activity.LoginActivity"/>
         <!-- 主界面 -->
         <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.RegisteredActivity">
-        </activity>
+        <!-- 注册界面 -->
+        <activity android:name=".activity.RegisteredActivity"/>
+        <!-- 修改密码界面 -->
+        <activity android:name=".activity.ForgetPasswordActivity"/>
     </application>
 
 </manifest>

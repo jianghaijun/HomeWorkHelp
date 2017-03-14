@@ -1,0 +1,23 @@
+<resources>
+    <!-- 内容间距dp -->
+    <dimen name="zero_dp">0dp</dimen>
+    <dimen name="one_dp">1dp</dimen>
+    <dimen name="five_dp">5dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
+    <dimen name="twenty_dp">20dp</dimen>
+    <dimen name="thirty_dp">30dp</dimen>
+    <!-- 每行高度 -->
+    <dimen name="forty_dp">40dp</dimen>
+    <dimen name="fifty_dp">50dp</dimen>
+    <!--头像大小-->
+    <dimen name="one_hundred_dp">100dp</dimen>
+    <!-- 字体大小 -->
+    <dimen name="eight_sp">8sp</dimen>
+    <dimen name="twelve_sp">12sp</dimen>
+    <dimen name="fourteen_sp">14sp</dimen>
+    <dimen name="twenty_sp">20sp</dimen>
+    <!-- 内容间距px -->
+    <dimen name="two_px">2px</dimen>
+    <dimen name="three_px">3px</dimen>
+    <dimen name="four_px">4px</dimen>
+</resources>

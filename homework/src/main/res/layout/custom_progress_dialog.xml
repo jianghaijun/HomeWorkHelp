@@ -4,13 +4,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="#ffffff"
+    android:background="@color/colorWhite"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingBottom="20dp"
-    android:paddingLeft="30dp"
-    android:paddingRight="30dp"
-    android:paddingTop="20dp">
+    android:paddingBottom="@dimen/twenty_dp"
+    android:paddingLeft="@dimen/thirty_dp"
+    android:paddingRight="@dimen/thirty_dp"
+    android:paddingTop="@dimen/twenty_dp">
 
     <ProgressBar
         android:layout_width="wrap_content"

@@ -12,6 +12,7 @@ public interface LoginView extends BaseView{
     /**
      * 是否登录成功
      * @param isSuccessful
+     * @param msg
      */
-    public void login(boolean isSuccessful);
+    public void login(boolean isSuccessful, String msg);
 }

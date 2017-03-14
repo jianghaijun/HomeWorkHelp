@@ -24,7 +24,7 @@ public class LoginPresenter extends BasePresenter<LoginView> {
         } else if (password.isEmpty()) {
             ToastUtil.showShort(mContext, "密码不能为空!");
         } else {
-            mView.login(true);
+            mView.login(true, "");
         }
     }
 }
