@@ -12,6 +12,8 @@ import com.example.homeworkhelp.R;
 import com.example.homeworkhelp.custom.CircleTextProgressbar;
 import com.example.homeworkhelp.utils.SharedPreferencesUtil;
 
+import org.litepal.tablemanager.Connector;
+
 /**
  * 欢迎页
  * @author JiangHaiJun
@@ -27,6 +29,8 @@ public class WelcomeActivity extends AppCompatActivity {
 		// 判断是否是第一次启动程序
 		boolean isFirstOpen = SharedPreferencesUtil.getBooleanMessage(this, SharedPreferencesUtil.FIRST_OPEN, true);
 		if (isFirstOpen) {
+			// 创建数据库
+			Connector.getDatabase();
 			// 进入引导页
 			startActivity(new Intent(this, BootPageActivity.class));
 			this.finish();

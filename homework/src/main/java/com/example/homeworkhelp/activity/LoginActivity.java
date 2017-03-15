@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.homeworkhelp.R;
 import com.example.homeworkhelp.base.BaseActivity;
+import com.example.homeworkhelp.bean.UserBean;
 import com.example.homeworkhelp.dialog.CustomProgressDialog;
 import com.example.homeworkhelp.presenter.LoginPresenter;
 import com.example.homeworkhelp.utils.SharedPreferencesUtil;
@@ -71,6 +72,12 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 	public void login(boolean isSuccessful, String msg) {
 		if (isSuccessful) {
 			Toast.makeText(mContext, "登录成功", Toast.LENGTH_SHORT).show();
+			// 向数据库中添加用户信息
+			UserBean userBean = new UserBean();
+			userBean.setUserName("努努");
+			userBean.setPhone(userNameEdt.getText().toString());
+			userBean.save();
+			
             // 登录成功后修改为已登录状态
             SharedPreferencesUtil.storedMessage(LoginActivity.this, SharedPreferencesUtil.IS_LOGIN, true);
 			startActivity(new Intent(mContext, MainActivity.class));

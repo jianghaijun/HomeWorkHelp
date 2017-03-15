@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<litepal>
+    <dbname value="HomeWork"/>
+    <version value="1"/>
+
+    <list>
+        <mapping class="com.example.homeworkhelp.bean.UserBean"></mapping>
+    </list>
+</litepal>

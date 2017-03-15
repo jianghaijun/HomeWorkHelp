@@ -1,6 +1,5 @@
 package com.example.homeworkhelp.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,11 +14,11 @@ import com.example.homeworkhelp.bean.UserBean;
 import com.example.homeworkhelp.presenter.ChoiceUserPresenter;
 import com.example.homeworkhelp.view.ChoiceUserView;
 
+import org.litepal.crud.DataSupport;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,11 +50,7 @@ public class ChoiceUserActivity extends BaseActivity<ChoiceUserView, ChoiceUserP
         rightTxt.setVisibility(View.VISIBLE);
         rightTxt.setText("新用户");
 
-        List<UserBean> userBeans = new ArrayList<UserBean>();
-
-        for (int i = 0; i < 10; i++) {
-            userBeans.add(new UserBean());
-        }
+        List<UserBean> userBeans = DataSupport.findAll(UserBean.class);
 
         choiceUserAdapter = new ChoiceUserAdapter(this, userBeans);
         userRclView.setLayoutManager(new LinearLayoutManager(this));

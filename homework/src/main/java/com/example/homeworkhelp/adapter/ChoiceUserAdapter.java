@@ -36,9 +36,9 @@ public class ChoiceUserAdapter extends RecyclerView.Adapter<ChoiceUserAdapter.Ch
 
     @Override
     public void onBindViewHolder(ChoiceUserHolder holder, int position) {
-        Glide.with(mContext).load("http://s15.sinaimg.cn/mw690/bf131490gd817c13a0dfe&690").into(holder.userHead);
-        holder.userName.setText("用户" + position);
-        holder.userPhone.setText("手机" + position);
+        Glide.with(mContext).load(userBeens.get(position).getUserHead()).into(holder.userHead);
+        holder.userName.setText(userBeens.get(position).getUserName());
+        holder.userPhone.setText(userBeens.get(position).getPhone());
     }
 
     @Override
