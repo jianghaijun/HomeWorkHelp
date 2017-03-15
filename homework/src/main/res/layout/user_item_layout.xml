@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:id="@+id/userInfoRl"
     android:background="@color/colorGray"
     android:layout_width="match_parent"
     android:layout_height="@dimen/one_hundred_dp">

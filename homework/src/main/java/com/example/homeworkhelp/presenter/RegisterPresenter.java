@@ -16,11 +16,12 @@ public class RegisterPresenter extends BasePresenter<RegisterView> {
 	/**
 	 * 注册
 	 * @param mContext
+	 * @param userName
 	 * @param userPhone
 	 * @param password
 	 * @param confirmPassword
 	 */
-	public void register(Context mContext, String userPhone, String password, String confirmPassword){
+	public void register(Context mContext, String userName, String userPhone, String password, String confirmPassword){
 		if (userPhone.isEmpty()) {
 			ToastUtil.showShort(mContext, "手机号不能为空!");
 		} else if (!PhoneFormatCheckUtils.isPhoneLegal(userPhone)) {

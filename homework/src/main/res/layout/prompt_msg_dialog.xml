@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_dp"
+        android:orientation="vertical"
+        app:layout_heightPercent="30%">
+
+        <TextView
+            android:id="@+id/promptTitleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dp"
+            android:background="@color/colorGray"
+            android:gravity="left|center"
+            android:paddingLeft="@dimen/ten_dp"
+            android:textSize="@dimen/twenty_sp"
+            app:layout_heightPercent="30%" />
+
+        <TextView
+            android:id="@+id/promptContentTxt"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dp"
+            android:gravity="left"
+            android:padding="@dimen/ten_dp"
+            android:textSize="@dimen/twenty_sp"
+            app:layout_heightPercent="40%" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dp"
+            android:paddingBottom="@dimen/ten_dp"
+            android:paddingLeft="@dimen/ten_dp"
+            android:paddingRight="@dimen/ten_dp"
+            app:layout_heightPercent="30%">
+
+            <Button
+                android:id="@+id/leftBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/five_dp"
+                android:layout_weight="1"
+                android:background="@drawable/blue_btn"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/twenty_sp" />
+
+            <Button
+                android:id="@+id/rightBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/five_dp"
+                android:layout_weight="1"
+                android:background="@drawable/blue_btn"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/twenty_sp" />
+
+        </LinearLayout>
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

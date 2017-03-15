@@ -34,6 +34,8 @@ public class RegisteredActivity extends BaseActivity<RegisterView, RegisterPrese
 	private EditText registerPhoneEdt;
 	@ViewInject(R.id.registerPassWordEdt)
 	private EditText registerPassWordEdt;
+	@ViewInject(R.id.userNameEdt)
+	private EditText userNameEdt;
 	@ViewInject(R.id.confirmPassWordEdt)
 	private EditText confirmPassWordEdt;
 
@@ -67,7 +69,7 @@ public class RegisteredActivity extends BaseActivity<RegisterView, RegisterPrese
 				break;
 			// 注册
 			case R.id.regBtn:
-				presenter.register(mContext, registerPhoneEdt.getText().toString(), registerPassWordEdt.getText().toString(), confirmPassWordEdt.getText().toString());
+				presenter.register(mContext, userNameEdt.getText().toString(), registerPhoneEdt.getText().toString(), registerPassWordEdt.getText().toString(), confirmPassWordEdt.getText().toString());
 				break;
 		}
 	}

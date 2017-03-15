@@ -19,11 +19,13 @@ import com.example.homeworkhelp.view.LoginView;
 import com.liji.circleimageview.CircleImageView;
 import com.orhanobut.logger.Logger;
 
+import org.litepal.crud.DataSupport;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.io.ByteArrayOutputStream;
+import java.util.List;
 
 /**
  * 登录页
@@ -53,7 +55,17 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 		mContext = this;
 		
 		progressDialog = new CustomProgressDialog(LoginActivity.this);
-		Glide.with(this).load("http://img06.tooopen.com/images/20160920/tooopen_sy_179407883616.jpg").into(userHeadIv);
+        // 显示最后一个登陆的用户
+		UserBean user = DataSupport.findLast(UserBean.class);
+        if (user != null) {
+            Glide.with(this).load(user.getUserHead())
+                    .error(R.mipmap.ic_launcher)
+                    .into(userHeadIv);
+        } else {
+            Glide.with(this).load("http://img.1985t.com/uploads/attaches/2012/05/5536-kBimZ3.jpg")
+                    .error(R.mipmap.ic_launcher)
+                    .into(userHeadIv);
+        }
 	}
 
 	@Override
@@ -81,19 +93,14 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 			userBean.setPhone(userNameEdt.getText().toString());
 			
 			ByteArrayOutputStream os = new ByteArrayOutputStream();
-			//Bitmap bitmap = ((BitmapDrawable)userHeadIv.getDrawable()).getBitmap();
-			
-			
-			//Bitmap image = ((BitmapDrawable)userHeadIv.getDrawable()).getBitmap();
 			userHeadIv.setDrawingCacheEnabled(true);
 			Bitmap bm = userHeadIv.getDrawingCache();
-			
-			
+
 			bm.compress(Bitmap.CompressFormat.PNG, 100, os);
 			
 			Logger.w(new String(os.toByteArray()));
 			userBean.setUserHead(os.toByteArray());
-			userBean.save();
+			userBean.saveOrUpdate("phone=?", userNameEdt.getText().toString());
 			
             // 登录成功后修改为已登录状态
             SharedPreferencesUtil.storedMessage(LoginActivity.this, SharedPreferencesUtil.IS_LOGIN, true);

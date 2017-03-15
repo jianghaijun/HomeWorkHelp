@@ -16,7 +16,7 @@
         android:layout_gravity="center_horizontal"
         android:scaleType="centerCrop"
         app:circle_border_color="@color/colorWhite"
-        app:circle_border_width="@dimen/five_dp"
+        app:circle_border_width="@dimen/one_dp"
         app:layout_marginBottomPercent="10%"
         app:layout_marginTopPercent="10%"/>
 

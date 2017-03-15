@@ -31,6 +31,19 @@
         app:layout_marginTopPercent="20%h"/>
 
     <EditText
+        android:id="@+id/userNameEdt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/forty_dp"
+        android:background="@drawable/login_input_bg"
+        android:gravity="left|center"
+        android:hint="@string/userName"
+        android:inputType="text"
+        android:layout_marginTop="@dimen/twenty_dp"
+        android:paddingLeft="@dimen/ten_dp"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginRightPercent="10%" />
+
+    <EditText
         android:id="@+id/registerPassWordEdt"
         android:layout_width="match_parent"
         android:layout_height="@dimen/forty_dp"

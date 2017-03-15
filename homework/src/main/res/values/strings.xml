@@ -2,6 +2,7 @@
     <string name="app_name">作业帮</string>
     <string name="skip">跳过</string>
     <string name="userPhone">手机号</string>
+    <string name="userName">昵称</string>
     <string name="password">密码</string>
     <string name="login">登录</string>
     <string name="register">注册</string>

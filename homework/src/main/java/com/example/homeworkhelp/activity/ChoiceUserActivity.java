@@ -53,23 +53,6 @@ public class ChoiceUserActivity extends BaseActivity<ChoiceUserView, ChoiceUserP
         rightTxt.setText("新用户");
 
         List<UserBean> userBeans = DataSupport.findAll(UserBean.class);
-    
-        userRclView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-                return false;
-            }
-    
-            @Override
-            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-        
-            }
-    
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-        
-            }
-        });
         
         choiceUserAdapter = new ChoiceUserAdapter(this, userBeans);
         userRclView.setLayoutManager(new LinearLayoutManager(this));
