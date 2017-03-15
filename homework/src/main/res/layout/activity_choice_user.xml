@@ -2,10 +2,9 @@
 <com.zhy.android.percent.support.PercentLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f8f8f8"
+    android:background="@color/colorGray"
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical">
@@ -25,6 +24,7 @@
         android:layout_margin="@dimen/ten_dp"
         android:background="@drawable/bg"
         android:scrollbars="none"
+        android:padding="@dimen/five_dp"
         android:visibility="visible">
 
     </android.support.v7.widget.RecyclerView>

@@ -2,6 +2,7 @@ package com.example.homeworkhelp.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ import com.orhanobut.logger.Logger;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
+
+import java.io.ByteArrayOutputStream;
 
 /**
  * 登录页
@@ -50,7 +53,7 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 		mContext = this;
 		
 		progressDialog = new CustomProgressDialog(LoginActivity.this);
-		Glide.with(this).load("http://s15.sinaimg.cn/mw690/bf131490gd817c13a0dfe&690").into(userHeadIv);
+		Glide.with(this).load("http://img06.tooopen.com/images/20160920/tooopen_sy_179407883616.jpg").into(userHeadIv);
 	}
 
 	@Override
@@ -76,6 +79,20 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 			UserBean userBean = new UserBean();
 			userBean.setUserName("努努");
 			userBean.setPhone(userNameEdt.getText().toString());
+			
+			ByteArrayOutputStream os = new ByteArrayOutputStream();
+			//Bitmap bitmap = ((BitmapDrawable)userHeadIv.getDrawable()).getBitmap();
+			
+			
+			//Bitmap image = ((BitmapDrawable)userHeadIv.getDrawable()).getBitmap();
+			userHeadIv.setDrawingCacheEnabled(true);
+			Bitmap bm = userHeadIv.getDrawingCache();
+			
+			
+			bm.compress(Bitmap.CompressFormat.PNG, 100, os);
+			
+			Logger.w(new String(os.toByteArray()));
+			userBean.setUserHead(os.toByteArray());
 			userBean.save();
 			
             // 登录成功后修改为已登录状态

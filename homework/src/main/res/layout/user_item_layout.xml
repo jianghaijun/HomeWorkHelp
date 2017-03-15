@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/colorGray"
     android:layout_width="match_parent"
     android:layout_height="@dimen/one_hundred_dp">
 
@@ -11,8 +12,8 @@
         android:layout_height="@dimen/eighty_dp"
         android:scaleType="centerCrop"
         android:layout_margin="@dimen/ten_dp"
-        app:circle_border_color="@color/colorWhite"
-        app:circle_border_width="@dimen/five_dp" />
+        app:circle_border_color="@color/colorLightBlue"
+        app:circle_border_width="@dimen/one_dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

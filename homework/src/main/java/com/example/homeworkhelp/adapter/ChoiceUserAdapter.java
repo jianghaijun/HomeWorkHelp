@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.homeworkhelp.R;
 import com.example.homeworkhelp.bean.UserBean;
+import com.example.homeworkhelp.utils.ToastUtil;
 import com.liji.circleimageview.CircleImageView;
 
 import java.util.List;
@@ -21,11 +22,11 @@ import java.util.List;
 
 public class ChoiceUserAdapter extends RecyclerView.Adapter<ChoiceUserAdapter.ChoiceUserHolder> {
     private Context mContext;
-    private List<UserBean> userBeens;
+    private List<UserBean> userBeans;
 
-    public ChoiceUserAdapter (Context mContext, List<UserBean> userBeens) {
+    public ChoiceUserAdapter (Context mContext, List<UserBean> userBeans) {
         this.mContext = mContext;
-        this.userBeens = userBeens;
+        this.userBeans = userBeans;
     }
 
     @Override
@@ -36,17 +37,17 @@ public class ChoiceUserAdapter extends RecyclerView.Adapter<ChoiceUserAdapter.Ch
 
     @Override
     public void onBindViewHolder(ChoiceUserHolder holder, int position) {
-        Glide.with(mContext).load(userBeens.get(position).getUserHead()).into(holder.userHead);
-        holder.userName.setText(userBeens.get(position).getUserName());
-        holder.userPhone.setText(userBeens.get(position).getPhone());
+        Glide.with(mContext).load(userBeans.get(position).getUserHead()).into(holder.userHead);
+        holder.userName.setText(userBeans.get(position).getUserName());
+        holder.userPhone.setText(userBeans.get(position).getPhone());
     }
 
     @Override
     public int getItemCount() {
-        return userBeens.size();
+        return userBeans.size();
     }
 
-    class ChoiceUserHolder extends RecyclerView.ViewHolder {
+    class ChoiceUserHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         CircleImageView userHead;
         TextView userName;
         TextView userPhone;
@@ -56,6 +57,11 @@ public class ChoiceUserAdapter extends RecyclerView.Adapter<ChoiceUserAdapter.Ch
             userHead = (CircleImageView) itemView.findViewById(R.id.userHead);
             userName = (TextView) itemView.findViewById(R.id.userNameTxt);
             userPhone = (TextView) itemView.findViewById(R.id.userPhoneTxt);
+        }
+    
+        @Override
+        public void onClick(View v) {
+            ToastUtil.showShort(mContext, "asdf");
         }
     }
 }

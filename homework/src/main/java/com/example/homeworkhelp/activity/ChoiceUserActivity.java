@@ -3,6 +3,7 @@ package com.example.homeworkhelp.activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -11,6 +12,7 @@ import com.example.homeworkhelp.R;
 import com.example.homeworkhelp.adapter.ChoiceUserAdapter;
 import com.example.homeworkhelp.base.BaseActivity;
 import com.example.homeworkhelp.bean.UserBean;
+import com.example.homeworkhelp.custom.RecyclerViewDivider;
 import com.example.homeworkhelp.presenter.ChoiceUserPresenter;
 import com.example.homeworkhelp.view.ChoiceUserView;
 
@@ -51,11 +53,28 @@ public class ChoiceUserActivity extends BaseActivity<ChoiceUserView, ChoiceUserP
         rightTxt.setText("新用户");
 
         List<UserBean> userBeans = DataSupport.findAll(UserBean.class);
-
+    
+        userRclView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+                return false;
+            }
+    
+            @Override
+            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+        
+            }
+    
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+        
+            }
+        });
+        
         choiceUserAdapter = new ChoiceUserAdapter(this, userBeans);
         userRclView.setLayoutManager(new LinearLayoutManager(this));
+        userRclView.addItemDecoration(new RecyclerViewDivider(this, LinearLayoutManager.VERTICAL));
         userRclView.setAdapter(choiceUserAdapter);
-
     }
 
     @Override
