@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.homeworkhelp.R;
+import com.example.homeworkhelp.activity.ChoiceUserActivity;
 import com.example.homeworkhelp.bean.UserBean;
 import com.example.homeworkhelp.dialog.PromptMsgDialog;
 import com.example.homeworkhelp.listener.PromptMsgListener;
@@ -63,7 +64,7 @@ public class ChoiceUserAdapter extends RecyclerView.Adapter<ChoiceUserAdapter.Ch
         holder.userHead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+				ChoiceUserActivity.jumpActivity(userBeans.get(position));
             }
         });
     }

@@ -1,9 +1,10 @@
 package com.example.homeworkhelp.activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ public class ChoiceUserActivity extends BaseActivity<ChoiceUserView, ChoiceUserP
     @ViewInject(R.id.userRclView)
     private RecyclerView userRclView;
 
+    private static Activity mContext;
     private ChoiceUserAdapter choiceUserAdapter;
 
     @Override
@@ -53,11 +55,25 @@ public class ChoiceUserActivity extends BaseActivity<ChoiceUserView, ChoiceUserP
         rightTxt.setText("新用户");
 
         List<UserBean> userBeans = DataSupport.findAll(UserBean.class);
+    
+        mContext = this;
         
         choiceUserAdapter = new ChoiceUserAdapter(this, userBeans);
         userRclView.setLayoutManager(new LinearLayoutManager(this));
         userRclView.addItemDecoration(new RecyclerViewDivider(this, LinearLayoutManager.VERTICAL));
         userRclView.setAdapter(choiceUserAdapter);
+    
+    }
+
+    /**
+     * 跳转到登录界面
+     * @param userBean
+     */
+    public static void jumpActivity(UserBean userBean){
+        Intent intent = new Intent();
+        intent.putExtra("user", userBean);
+        mContext.setResult(1, intent);
+        mContext.finish();
     }
 
     @Override

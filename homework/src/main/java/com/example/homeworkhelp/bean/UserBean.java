@@ -2,12 +2,14 @@ package com.example.homeworkhelp.bean;
 
 import org.litepal.crud.DataSupport;
 
+import java.io.Serializable;
+
 /**
  * @author Administrator
  * @time 2017/3/14 0014 22:03
  */
 
-public class UserBean extends DataSupport {
+public class UserBean extends DataSupport implements Serializable {
 	private String userName;
 	private String phone;
 	private byte[] userHead;

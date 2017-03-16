@@ -25,7 +25,6 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.io.ByteArrayOutputStream;
-import java.util.List;
 
 /**
  * 登录页
@@ -140,7 +139,6 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		
 		switch (resultCode) {
 			case 1:
 				switch (requestCode) {
@@ -153,7 +151,11 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 						Logger.w(data.getExtras().getString("userPhone"));
 						break;
 					case 3:
-						Logger.w("用户选择!");
+						UserBean user = (UserBean) data.getSerializableExtra("user");
+						Logger.w(user.getPhone());
+						Glide.with(this).load(user.getUserHead())
+								.error(R.mipmap.ic_launcher)
+								.into(userHeadIv);
 						break;
 				}
 				break;
