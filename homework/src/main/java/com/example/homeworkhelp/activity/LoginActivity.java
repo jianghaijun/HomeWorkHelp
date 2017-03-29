@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -35,6 +36,8 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
 	// 圆形图片
 	@ViewInject(R.id.userHeadIv)
 	private CircleImageView userHeadIv;
+    @ViewInject(R.id.txt_user_name)
+    private TextView txtUserName;
 	// 手机号
 	@ViewInject(R.id.userNameEdt)
 	private EditText userNameEdt;
@@ -57,13 +60,21 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
         // 显示最后一个登陆的用户
 		UserBean user = DataSupport.findLast(UserBean.class);
         if (user != null) {
+            // 设置用户头像
             Glide.with(this).load(user.getUserHead())
                     .error(R.mipmap.ic_launcher)
                     .into(userHeadIv);
+            // 设置用户名
+            txtUserName.setText(user.getUserName());
+            // 隐藏手机号
+            userNameEdt.setText(user.getPhone());
+            userNameEdt.setVisibility(View.GONE);
         } else {
+            // 设置默认头像和名字
             Glide.with(this).load("http://img.1985t.com/uploads/attaches/2012/05/5536-kBimZ3.jpg")
                     .error(R.mipmap.ic_launcher)
                     .into(userHeadIv);
+            txtUserName.setText("");
         }
 	}
 

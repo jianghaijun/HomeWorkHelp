@@ -6,7 +6,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.homeworkhelp.R;
 import com.example.homeworkhelp.utils.SharedPreferencesUtil;
 
@@ -24,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
 	private ImageButton imgBtnLeft;
 	@ViewInject(R.id.drawelayout)
 	private DrawerLayout drawelayout;
+    @ViewInject(R.id.img_user_head)
+    private ImageView userHeadImgView;
+    @ViewInject(R.id.bg_imgview)
+    private ImageView bgImageView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
 		x.view().inject(this);
 		
 		imgBtnLeft.setImageDrawable(getResources().getDrawable(R.drawable.back_btn));
+
+        Glide.with(this).load("http://pic.58pic.com/58pic/12/32/79/02D58PIC9Xt.jpg").into(bgImageView);
+
+        Glide.with(this).load("http://img.1985t.com/uploads/attaches/2012/05/5536-kBimZ3.jpg").into(userHeadImgView);
 		
 	}
 	
