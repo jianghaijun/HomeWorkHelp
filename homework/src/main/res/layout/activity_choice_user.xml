@@ -30,7 +30,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/userRclView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/ten_dp"
             android:background="@drawable/bg"
             android:padding="@dimen/five_dp"
@@ -40,6 +40,5 @@
         </android.support.v7.widget.RecyclerView>
 
     </com.scu.miomin.shswiperefresh.core.SHSwipeRefreshLayout>
-
 
 </com.zhy.android.percent.support.PercentLinearLayout>

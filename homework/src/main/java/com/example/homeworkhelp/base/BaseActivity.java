@@ -44,7 +44,7 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
         return super.onTouchEvent(event);
     }
 
-/**
+    /**
      * 申请权限
      * @param permissions
      * @param perListerner

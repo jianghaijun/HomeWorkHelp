@@ -319,13 +319,13 @@ public class CircleTextProgressbar extends AppCompatTextView {
 		getDrawingRect(bounds);
 		
 		int size = bounds.height() > bounds.width() ? bounds.width() : bounds.height();
-		float outerRadius = size / 2;
+		float outerRadius = size / 2 - 20;
 		
 		//画内部背景
 		int circleColor = inCircleColors.getColorForState(getDrawableState(), 0);
 		mPaint.setStyle(Paint.Style.FILL);
 		mPaint.setColor(circleColor);
-		canvas.drawCircle(bounds.centerX(), bounds.centerY(), outerRadius - outLineWidth - 20, mPaint);
+		canvas.drawCircle(bounds.centerX(), bounds.centerY(), outerRadius - outLineWidth , mPaint);
 		
 		//画边框圆
 		mPaint.setStyle(Paint.Style.STROKE);
@@ -346,7 +346,7 @@ public class CircleTextProgressbar extends AppCompatTextView {
 		mPaint.setStyle(Paint.Style.STROKE);
 		mPaint.setStrokeWidth(progressLineWidth);
 		mPaint.setStrokeCap(Paint.Cap.ROUND);
-		int deleteWidth = progressLineWidth + outLineWidth;
+		int deleteWidth = progressLineWidth + outLineWidth + 20;
 		mArcRect.set(bounds.left + deleteWidth / 2, bounds.top + deleteWidth / 2, bounds.right - deleteWidth / 2, bounds.bottom - deleteWidth / 2);
 		
 		canvas.drawArc(mArcRect, 0, 360 * progress / 100, false, mPaint);
