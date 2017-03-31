@@ -1,6 +1,5 @@
 package com.example.homeworkhelp.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,7 +17,6 @@ import com.example.homeworkhelp.adapter.SettingAdapter;
 import com.example.homeworkhelp.bean.SettingBean;
 import com.example.homeworkhelp.custom.RecyclerViewDivider;
 import com.example.homeworkhelp.utils.SharedPreferencesUtil;
-import com.umeng.socialize.UMShareAPI;
 
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -102,12 +100,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-	}
-
-@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		// 登录成功后修改为已登录状态
